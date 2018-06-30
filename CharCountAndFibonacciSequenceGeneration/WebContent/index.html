@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<titile></title>
+
+</head>
+<body>
+<script>
+function getStrLen(){
+    	var msgDiv = document.getElementById('textbox1');
+ 	document.getElementById('msg').textContent = msgDiv.value.split('').length;
+
+}
+var a = 0;
+var b = 0;
+var c = 1;
+var ONE = 1;
+function genFibonacci(times){
+	if(times <=0){return;}
+     a = b;
+	b = c;
+	c = a + b;
+	
+	
+	
+
+	
+		document.getElementById('fibseq').textContent += a.toString() + (times > ONE ? ", " : " ");
+           
+		genFibonacci(times - 1, false); 
+}
+
+function outFib(){
+	document.getElementById('fibseq').textContent = "";
+genFibonacci(document.getElementById('fibText').value);
+}
+
+</script>
+
+<button id="lenClick" onclick="getStrLen()">String Length</button>
+Enter a sentence or multiple ones: <input type="text" id="textbox1"></input>
+<br/>
+
+Number of characters in this sentence is: <span id="msg"></span>
+<br/>
+
+<input type="text" id="fibText"></input>
+<button id="fibClick" onclick="outFib()">Generate Fibonacci Sequence</button><div id="fibseq"></div>
+</body>
+<html>
